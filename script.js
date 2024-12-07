@@ -22,8 +22,8 @@ function getComputerChoice(randomInteger){
     return compChoice 
 }
 
-//set a variable to simplify code later on
-let computerChoice = getComputerChoice(randomInteger)
+//set a variable to simplify for later on
+const computerChoice = getComputerChoice(randomInteger)
 
 console.log (computerChoice)
 
@@ -36,16 +36,11 @@ let userInput = window.prompt("Rock, paper or scissors - What's your choice?")
 
 function getHumanChoice(userInput) {
     userInput = userInput.toLowerCase();
-    
-    if (userInput != "rock" || "paper" || "scissors") {
-        userInput = "Error! - Please enter rock, paper or scissors."
-    }
-
     return userInput
 }
 
 // set a variable to simplify code later on
-let humanChoice = getHumanChoice(userInput)
+const humanChoice = getHumanChoice(userInput)
 
 console.log (humanChoice)
 
@@ -53,29 +48,49 @@ console.log (humanChoice)
 let humanScore = 0;
 let computerScore =  0;
 
-//function to compare computer and human answer
+//function to compare computer and human answer and assign a winner
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
-        winner = "It's a draw!"
+        return "tie"
     
     } else if (humanChoice == "rock" && computerChoice == "scissors") {
-        winner = "You win! - rock beats scissors"
+        return "human"
+
     
     } else if (humanChoice == "scissors" && computerChoice == "paper") {
-        winner = "You win! - scissors beats paper"
+        return "human"
     
     } else if (humanChoice == "paper" && computerChoice == "rock") {
-        winner = "You win! - paper beats rock"
-    
+        return "human"
+
     } else {
-        winner = "You lose - better luck next time!"
+        return "computer"
     }
-    
-    return winner
 }
 
-//variable to simplify code
-let roundOutcome = playRound(humanChoice, computerChoice)
+const gameRound = playRound(humanChoice, computerChoice);
 
-console.log(roundOutcome);
+console.log(gameRound)
+
+//increment computerScore and humanScore by 1 
+if (gameRound === "human"){
+    humanScore ++;
+}
+
+else if (gameRound === "computer"){
+    computerScore++;
+}
+
+console.log("Your score: " + humanScore);
+console.log("Computer's score: " + computerScore);
+
+//write out winning/losing declarations to console
+
+if (gameRound === "human") {
+    console.log("You win! " + userInput + " beats " + computerChoice)
+} else if (gameRound === "computer"){    
+    console.log("You lose :( " + computerChoice + " beats " + userInput)
+} else if (gameRound === "tie") {
+    console.log("It's a tie!")
+}
