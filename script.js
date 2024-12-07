@@ -28,7 +28,6 @@ let computerChoice = getComputerChoice(randomInteger)
 console.log (computerChoice)
 
 
-
 //create popup to ask for user choice
 
 let userInput = window.prompt("Rock, paper or scissors - What's your choice?")
@@ -37,6 +36,11 @@ let userInput = window.prompt("Rock, paper or scissors - What's your choice?")
 
 function getHumanChoice(userInput) {
     userInput = userInput.toLowerCase();
+    
+    if (userInput != "rock" || "paper" || "scissors") {
+        userInput = "Error! - Please enter rock, paper or scissors."
+    }
+
     return userInput
 }
 
@@ -49,5 +53,29 @@ console.log (humanChoice)
 let humanScore = 0;
 let computerScore =  0;
 
+//function to compare computer and human answer
 
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice == computerChoice) {
+        winner = "It's a draw!"
+    
+    } else if (humanChoice == "rock" && computerChoice == "scissors") {
+        winner = "You win! - rock beats scissors"
+    
+    } else if (humanChoice == "scissors" && computerChoice == "paper") {
+        winner = "You win! - scissors beats paper"
+    
+    } else if (humanChoice == "paper" && computerChoice == "rock") {
+        winner = "You win! - paper beats rock"
+    
+    } else {
+        winner = "You lose - better luck next time!"
+    }
+    
+    return winner
+}
 
+//variable to simplify code
+let roundOutcome = playRound(humanChoice, computerChoice)
+
+console.log(roundOutcome);
