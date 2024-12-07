@@ -9,20 +9,23 @@ let randomInteger = Math.floor(Math.random()* 3);
 
 function getComputerChoice(randomInteger){
     if (randomInteger == 0) {
-        computerChoice = "rock"
+        compChoice = "rock"
 
     } else if (randomInteger == 1) {
-        computerChoice = "paper"
+        compChoice = "paper"
 
 
     } else if (randomInteger==2) {
-        computerChoice = "scissors"
+        compChoice = "scissors"
 
     }
-    return computerChoice 
+    return compChoice 
 }
 
-console.log (getComputerChoice(randomInteger))
+//set a variable to simplify code later on
+let computerChoice = getComputerChoice(randomInteger)
+
+console.log (computerChoice)
 
 
 
@@ -37,9 +40,14 @@ function getHumanChoice(userInput) {
     return userInput
 }
 
-console.log (getHumanChoice(userInput))
+// set a variable to simplify code later on
+let humanChoice = getHumanChoice(userInput)
 
+console.log (humanChoice)
 
+//variables to store score
+let humanScore = 0;
+let computerScore =  0;
 
 
 
