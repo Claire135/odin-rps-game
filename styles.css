@@ -1,0 +1,116 @@
+body {
+    background: conic-gradient(
+        from 40deg,
+        #50C878 0%, 
+        #1E5A3E 100%
+    )
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adding depth to text */
+    color: #D4AF37;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+
+}
+
+.game-box{
+    display: flex;
+    background-color:#D4AF37;
+    padding: 10px;
+    justify-content: center;
+}
+
+.button-box{
+    display: flex;
+    gap: 40px;
+    background-color: #F5F5DC;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.battleground {
+    background-color: #2A2A2A; 
+    border-radius: 50%; 
+    width: 400px; 
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), /* Initial glow */
+    0 0 60px 40px rgba(0, 255, 0, 0.4); /* Outer glow */
+    animation: shimmer 2s infinite ease-in-out; /* Apply animation */
+    margin: 100px auto; /* Centers the circle */
+}
+
+ @keyframes shimmer {
+    0% {
+    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), 
+      0 0 60px 40px rgba(0, 255, 0, 0.4); /* Initial glow */
+    }
+    50% {
+    box-shadow: 0 0 40px 30px rgba(0, 255, 0, 0.8), 
+      0 0 80px 50px rgba(0, 255, 0, 0.5); /* Bright shimmer */
+    }
+    100% {
+    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), 
+      0 0 60px 40px rgba(0, 255, 0, 0.4); /* Return to initial glow */
+    }
+}
+
+
+#rockBtn {
+    background: linear-gradient(145deg, #2F4F4F, #A9A9A9); /* Stone and iron gradient */
+    color: #FFFFFF; 
+    border: 2px solid #2F4F4F; 
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000; 
+    transition: all 0.3s ease;
+}
+
+#rockBtn:hover {
+    box-shadow: 0 0 10px #6A5ACD; 
+    
+}
+
+#paperBtn {
+    background: linear-gradient(145deg, #F5F5DC, #228B22); 
+    color: #1C1C1C; 
+    border: 2px solid #228B22; 
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #F5F5DC; 
+    transition: all 0.3s ease;
+}
+
+#paperBtn:hover {
+    box-shadow: 0 0 10px #50C878;
+    transform: scale(1.05); 
+}
+
+#scissorsBtn {
+    background: linear-gradient(145deg, #8C7853, #B08D57); /* Metallic gradient */
+    color: #FFD700; 
+    border: 2px solid #8C7853; 
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #8C7853;
+    transition: all 0.3s ease;
+}
+
+#scissorsBtn:hover {
+    box-shadow: 0 0 10px #FF6347; 
+    transform: scale(1.05); 
+}
