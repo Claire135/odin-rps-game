@@ -1,14 +1,24 @@
+@font-face {
+    font-family: "Celtic Hand";
+    src: url(./CELTICHD.TTF)  format('truetype');
+}
+
 body {
     background: conic-gradient(
         from 40deg,
         #50C878 0%, 
         #1E5A3E 100%
-    )
+    );
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adding depth to text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
     color: #D4AF37;
+    font-family: 'Celtic Hand', serif;
+    letter-spacing: 0.1em;
+    font-size: 50px;
 }
 
 .header{
@@ -19,9 +29,10 @@ h1 {
 
 }
 
+/* button design */
 .game-box{
     display: flex;
-    background-color:#D4AF37;
+    background: linear-gradient(135deg, #B8860B, #D4AF37, #C6893C, #6B3F1F);
     padding: 10px;
     justify-content: center;
 }
@@ -33,36 +44,6 @@ h1 {
     padding: 20px;
     justify-content: space-around;
 }
-
-.battleground {
-    background-color: #2A2A2A; 
-    border-radius: 50%; 
-    width: 400px; 
-    height: 400px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), /* Initial glow */
-    0 0 60px 40px rgba(0, 255, 0, 0.4); /* Outer glow */
-    animation: shimmer 2s infinite ease-in-out; /* Apply animation */
-    margin: 100px auto; /* Centers the circle */
-}
-
- @keyframes shimmer {
-    0% {
-    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), 
-      0 0 60px 40px rgba(0, 255, 0, 0.4); /* Initial glow */
-    }
-    50% {
-    box-shadow: 0 0 40px 30px rgba(0, 255, 0, 0.8), 
-      0 0 80px 50px rgba(0, 255, 0, 0.5); /* Bright shimmer */
-    }
-    100% {
-    box-shadow: 0 0 30px 20px rgba(0, 255, 0, 0.6), 
-      0 0 60px 40px rgba(0, 255, 0, 0.4); /* Return to initial glow */
-    }
-}
-
 
 #rockBtn {
     background: linear-gradient(145deg, #2F4F4F, #A9A9A9); /* Stone and iron gradient */
@@ -113,4 +94,74 @@ h1 {
 #scissorsBtn:hover {
     box-shadow: 0 0 10px #FF6347; 
     transform: scale(1.05); 
+}
+
+/*battleground design*/
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    align-items: center;
+}
+
+.battleground {
+    background: linear-gradient(135deg, #B8860B, #D4AF37, #C6893C, #6B3F1F);
+    border: 10px solid #C6893C;
+    border-radius: 50%; 
+    width: 400px; 
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.6), /* Initial red glow */
+    0 0 60px 40px rgba(255, 0, 0, 0.4); /* Outer red glow */
+    animation: shimmer 4s infinite ease-in-out; /* Apply shimmer animation */
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 0 0 auto;
+    }
+
+    @keyframes shimmer {
+    0% {
+    box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.6), 
+        0 0 60px 40px rgba(255, 0, 0, 0.4); /* Initial red glow */
+    }
+    50% {
+    box-shadow: 0 0 40px 30px rgba(255, 0, 0, 0.8), 
+        0 0 80px 50px rgba(255, 0, 0, 0.5); /* Bright red shimmer */
+    }
+    100% {
+    box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.6), 
+        0 0 60px 40px rgba(255, 0, 0, 0.4); /* Return to initial red glow */
+    }
+}
+
+#battleChoice{
+    color:#333333;
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+}
+
+#declareWinner{
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #FAEBD7;
+}
+
+/*ogham stone design*/
+
+.left-stone, .right-stone {
+    width:10%;
+    height: 70vh;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.8), 5px 5px 15px 5px rgba(0, 0, 0, 0.7);
+    background:linear-gradient(135deg, #d3d3d3 10%, #a9a9a9 50%, #808080 100%);
+    transform: rotateY(-30deg);
+      transform-origin: right;
 }

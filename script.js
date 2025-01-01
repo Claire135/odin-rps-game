@@ -41,17 +41,17 @@ function playGame() {
 
             //function to compare computer and human answer and assign a winner
             function getWinner(humanChoice, computerChoice) {
-                if (humanChoice == computerChoice) {
+                if (humanChoice === computerChoice) {
                     return "tie"
 
-                } else if (humanChoice == "rock" && computerChoice == "scissors") {
+                } else if (humanChoice === "rock" && computerChoice === "scissors") {
                     return "human"
 
 
-                } else if (humanChoice == "scissors" && computerChoice == "paper") {
+                } else if (humanChoice === "scissors" && computerChoice === "paper") {
                     return "human"
 
-                } else if (humanChoice == "paper" && computerChoice == "rock") {
+                } else if (humanChoice === "paper" && computerChoice === "rock") {
                     return "human"
 
                 } else {
@@ -70,16 +70,47 @@ function playGame() {
                 computerScore++;
             }
 
+            const battleChoice = document.querySelector("#battleChoice");
+            
+            const humanChoiceText = document.createElement("div");
+            humanChoiceText.classList.add("humanChoiceText");
+            humanChoiceText.textContent = "Your choice: " + humanChoice;
+            battleChoice.appendChild(humanChoiceText);
+            
+            const computerChoiceText = document.createElement("div");
+            computerChoiceText.classList.add("computerChoiceText")
+            computerChoiceText.textContent = "Computer's choice: " + computerChoice;            
+            battleChoice.appendChild(computerChoiceText);
+
             console.log ("Your choice:" + humanChoice);
             console.log ("Computer's choice: " + computerChoice);
 
             //declare result of the match
+            const declareWinner = document.querySelector("#declareWinner")
+
             if (gameRound === "human") {
+                const youWinText = document.createElement("div");
+                youWinText.classList.add("youWinText");
+                youWinText.textContent = "A victory! " + humanChoice + " beats " + computerChoice;
+                declareWinner.appendChild(youWinText);
+
                 console.log("You win! " + humanChoice + " beats " + computerChoice)
-            } else if (gameRound === "computer"){    
+
+            } else if (gameRound === "computer"){ 
+                const youLoseText = document.createElement("div");
+                youLoseText.classList.add("youLoseText");
+                youLoseText.textContent = "You have been wounded! " + computerChoice + " beats " + humanChoice
+                declareWinner.appendChild(youLoseText);
+
                 console.log("You lose :( " + computerChoice + " beats " + humanChoice)
+            
             } else if (gameRound === "tie") {
-                console.log("It's a tie!")
+                const tieText = document.createElement("div");
+                tieText.classList.add("tieText");
+                tieText.textContent = "You are evenly matched - you must fight harder!"
+                declareWinner.appendChild(tieText);
+                console.log("You are evenly matched - you must fight harder!")
+            
             }
 
             console.log("Your score: " + humanScore);

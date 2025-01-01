@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate RPS</title>
+    <title>Legendary RPS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,14 +12,35 @@
         <h1>Legendary Rock, Paper, Scissors!</h1>
     </div>
     <div class = "game-box">
-    <img src=".images/flyinhCrow" alt>
         <div class = "button-box">
             <button id="rockBtn">Rock</button>
             <button id ="paperBtn">Paper</button>
             <button id = "scissorsBtn">Scissors</button>
         </div>
     </div>
-        <div class="battleground"></div>
+    <div class = game-container>
+        <div class = "left-stone">
+            <div id="scoreBoard">
+                <div class="computerScoreText"></div>
+            </div>
+        </div>
+        <div class="battleground">
+            <div id="battleChoice">
+                <div class = "humanChoiceText"></div>
+                <div class = "computerChoiceText"></div>
+            </div>
+            <div id = "declareWinner">
+                <div class = "youWinText"></div>
+                <div class = "youLoseText"></div>
+                <div class = "tieText"></div>
+            </div>
+        </div>
+        <div class = "right-stone">
+            <div id="scoreBoard">
+                <div class="heroScore"></div>
+            </div>
+        </div>
+
     </div>
 
    
