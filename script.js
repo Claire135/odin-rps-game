@@ -1,15 +1,9 @@
-
-console.log("Welcome to rock paper scissors")
-
 function playGame() {
 
     //variables to store score
     let humanScore = 0;
     let computerScore =  0;
-    const rounds = 5
-
-    //for (let roundNo = 1; roundNo <= rounds; roundNo++ ) {   
-      //  console.log(`Round ${roundNo}!`);
+    let roundNo = 1
 
         //generate a random integer and assign it to a string
         function getComputerChoice(){
@@ -37,6 +31,12 @@ function playGame() {
         }
 
         function playRound(humanChoice){
+
+            const round = document.querySelector("#round");
+            round.textContent = `Clash No. ${roundNo}`;
+
+
+
             const computerChoice = getComputerChoice();
 
             //function to compare computer and human answer and assign a winner
@@ -71,7 +71,7 @@ function playGame() {
             }
 
             const battleChoice = document.querySelector("#battleChoice");
-            
+
             const humanChoiceText = document.createElement("div");
             humanChoiceText.classList.add("humanChoiceText");
             humanChoiceText.textContent = "Your choice: " + humanChoice;
@@ -79,8 +79,8 @@ function playGame() {
             
             const computerChoiceText = document.createElement("div");
             computerChoiceText.classList.add("computerChoiceText")
-            computerChoiceText.textContent = "Computer's choice: " + computerChoice;            
-            battleChoice.appendChild(computerChoiceText);
+            computerChoiceText.textContent = "Crom Cruach: " + computerChoice;            
+            battleChoice.appendChild(computerChoiceText);          
 
             console.log ("Your choice:" + humanChoice);
             console.log ("Computer's choice: " + computerChoice);
@@ -112,11 +112,20 @@ function playGame() {
                 console.log("You are evenly matched - you must fight harder!")
             
             }
-
-            console.log("Your score: " + humanScore);
-            console.log("Computer's score: " + computerScore); 
+            
+            const leftOgham = document.querySelector("#leftOgham");
+            const heroScore = document.createElement("div");
+            heroScore.classList.add("heroScore");
+            heroScore.textContent = "Hero: " + humanScore;
+            leftOgham.appendChild(heroScore);
         
-            return true;
+            const rightOgham = document.querySelector("#rightOgham")
+            const computerScoreText = document.createElement("div");
+            computerScoreText.classList.add("computerScoreText");
+            computerScoreText.textContent = "Crom Cruach: " + computerScore;
+            rightOgham.appendChild(computerScoreText);
+            console.log("Hero: " + humanScore);
+            console.log("Crom Cruach: " + computerScore); 
         }
 
         // Set up event listeners for buttons
@@ -124,22 +133,90 @@ function playGame() {
 
         buttons.forEach((button) => {
             button.addEventListener("click", (event) => {
+                document.querySelector("#declareWinner").textContent = "";
+                document.querySelector("#battleChoice").textContent = "";
+                document.querySelector("#leftOgham").textContent = "";
+                document.querySelector("#rightOgham").textContent = "";
+                document.querySelector("#round").textContent = "";
+                
                 const humanChoice = getHumanChoice(event.target); // Pass the clicked button to getHumanChoice
                 playRound(humanChoice);
+                
+                roundNo++;
+                
+                if (roundNo === 6) {
+                    endGame();
+                }
+
             });
         });
-}
     
-/*
-    if (humanScore > computerScore) {
-        console.log("You're an absolute winner! Take that computer!")
-    } else if (humanScore < computerScore) {
-        console.log("Computer wins! Boo you!")
-    } else { 
-        console.log("It's a tie!")
-    }
+        function endGame(){
+            const endGameWinner = document.querySelector("#endGameWinner")
+            buttons.forEach((button) => (button.disabled = true));
+            document.querySelector("#declareWinner").textContent = "";
+            document.querySelector("#battleChoice").textContent = "";
+            document.querySelector("#round").textContent = "";
+            
+            if (humanScore > computerScore) {
+                const humanWinsText = document.createElement("div");
+                endGameWinner.textContent = "You're an absolute winner! Take that Crom Cruach!";
+                
+                const crowWinning = document.createElement('img');
+                crowWinning.src = "./images/crow_3.jpg" 
+                crowWinning.alt = 'Crow standing victoriously';
+                crowWinning.style.height = "150px";
+                crowWinning.style.width = "auto";
+                endGameWinner.appendChild(crowWinning);
+
+                console.log("You're an absolute winner! Take that Crom Cruach!")
+            
+            } else if (humanScore < computerScore) {
+                const computerWinsText = document.createElement("div");
+                endGameWinner.textContent = "Crom Cruach has triumphed! Boo you!";
+                
+                const crow = document.createElement('img');
+                crow.src = "./images/crow_2.jpg" 
+                crow.alt = 'Crow on a skull';
+                crow.style.height = "150px";
+                crow.style.width = "auto";
+                endGameWinner.appendChild(crow);
+        
+                console.log("Computer wins! Boo you!")
+            
+            } else {
+                const tieText = document.createElement("div");
+                endGameWinner.textContent = "It's a tie - you both walk away to fight another day.";
+                console.log("It's a tie!")
+
+                const crowFlying = document.createElement('img');
+                crowFlying.src = "./images/crow_1.jpg" 
+                crowFlying.alt = 'Crow flying away';
+                crowFlying.style.height = "150px";
+                crowFlying.style.width = "auto";
+                endGameWinner.appendChild(crowFlying);
+            }
+
+        }
+
 
 }
-*/
 
-playGame()
+const startBtn = document.querySelector("#startBtn");
+startBtn.addEventListener("click", () => {
+    
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.textContent = "Choose your weapon";
+    startBtn.appendChild(message);
+    
+    startBtn.replaceWith(message);
+
+        // Clear the message after a delay
+        setTimeout(() => {
+            message.textContent = ""; // Clears the message after 3 seconds
+        }, 2500);
+    
+        startBtn.remove(); // Removes the start button
+        playGame();
+});

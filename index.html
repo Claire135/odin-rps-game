@@ -10,6 +10,7 @@
 <body>
     <div class = "header">
         <h1>Legendary Rock, Paper, Scissors!</h1>
+        <p>Crom Cruach is demanding sacrifice and needs to be stopped. Choose your weapon wisely!</p>
     </div>
     <div class = "game-box">
         <div class = "button-box">
@@ -20,25 +21,25 @@
     </div>
     <div class = game-container>
         <div class = "left-stone">
-            <div id="scoreBoard">
-                <div class="computerScoreText"></div>
+            <div id="leftOgham">
+                <div class = "heroScore"></div>
             </div>
         </div>
         <div class="battleground">
-            <div id="battleChoice">
-                <div class = "humanChoiceText"></div>
-                <div class = "computerChoiceText"></div>
-            </div>
-            <div id = "declareWinner">
-                <div class = "youWinText"></div>
-                <div class = "youLoseText"></div>
-                <div class = "tieText"></div>
-            </div>
+
+            <button id="startBtn">Click on the shield to summon Crom Cruach.</button>
+
+            <div id = "round"></div>
+            <div id="battleChoice"></div>
+            <div id = "declareWinner"></div>
+            <div id = "endGameWinner"></div>
         </div>
         <div class = "right-stone">
-            <div id="scoreBoard">
-                <div class="heroScore"></div>
+            <div id = "rightOgham">
+                <div class="computerScoreText"></div>
             </div>
+            <img src="./images/ogham-crom-cruach-removebg-preview.png" height="350px">
+            
         </div>
 
     </div>

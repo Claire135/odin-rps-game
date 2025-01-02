@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Ogham&family=Quicksand:wght@300..700&display=swap');
+
 @font-face {
     font-family: "Celtic Hand";
     src: url(./CELTICHD.TTF)  format('truetype');
 }
 
 body {
-    background: conic-gradient(
-        from 40deg,
-        #50C878 0%, 
-        #1E5A3E 100%
+    background: linear-gradient(
+        135deg,
+        #1E5A3E 0%,  
+        #2E8B57 40%,  
+        #50C878 100% 
     );
     margin: 0px;
     padding: 0px;
@@ -16,9 +19,9 @@ body {
 h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
     color: #D4AF37;
-    font-family: 'Celtic Hand', serif;
-    letter-spacing: 0.1em;
     font-size: 50px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .header{
@@ -26,6 +29,16 @@ h1 {
     justify-content: center;
     align-items: center;
     padding:20px;
+    flex-direction: column;
+    font-family: 'Celtic Hand', serif;
+    letter-spacing: 0.1em;
+    padding: 40px;
+}
+
+p{
+    text-align: center;
+    color:#FAEBD7;
+    font-size: 25px;
 
 }
 
@@ -104,6 +117,19 @@ h1 {
     align-items: center;
 }
 
+#startBtn{
+    background: none;
+    border: none;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #806a43;
+    font-family: "Celtic Hand";
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 40px;
+}
+
 .battleground {
     background: linear-gradient(135deg, #B8860B, #D4AF37, #C6893C, #6B3F1F);
     border: 10px solid #C6893C;
@@ -120,7 +146,7 @@ h1 {
     margin: 100px auto;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     flex: 0 0 auto;
     }
 
@@ -140,17 +166,48 @@ h1 {
 }
 
 #battleChoice{
-    color:#333333;
+    color:#FAEBD7;
     text-align: center;
     font-size: 35px;
     line-height: 1.5;
+}
+
+#round, #endGameWinner {
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    color:#806a43; 
+}
+
+#round{
+    font-family: 'Celtic Hand', serif;
 }
 
 #declareWinner{
     text-align: center;
     font-size: 35px;
     line-height: 1.5;
-    color: #FAEBD7;
+    color:#333333; 
+    margin-bottom: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#endGameWinner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.message {
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    color:#806a43; 
+    font-family: 'Celtic Hand', serif;
+    margin-top: 30px;
 }
 
 /*ogham stone design*/
@@ -159,9 +216,18 @@ h1 {
     width:10%;
     height: 70vh;
     border-radius: 30px;
-    padding: 20px;
+    padding: 30px;
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.8), 5px 5px 15px 5px rgba(0, 0, 0, 0.7);
     background:linear-gradient(135deg, #d3d3d3 10%, #a9a9a9 50%, #808080 100%);
     transform: rotateY(-30deg);
       transform-origin: right;
+}
+
+#leftOgham, #rightOgham{
+    font-family: 'Celtic Hand', serif;
+    letter-spacing: 0.1em;
+    color: #2F4F4F;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.5;
 }
