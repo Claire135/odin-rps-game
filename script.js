@@ -133,6 +133,7 @@ function playGame() {
 
         buttons.forEach((button) => {
             button.addEventListener("click", (event) => {
+                document.querySelector(".message").textContent = "";
                 document.querySelector("#declareWinner").textContent = "";
                 document.querySelector("#battleChoice").textContent = "";
                 document.querySelector("#leftOgham").textContent = "";
@@ -163,7 +164,7 @@ function playGame() {
                 endGameWinner.textContent = "You're an absolute winner! Take that Crom Cruach!";
                 
                 const crowWinning = document.createElement('img');
-                crowWinning.src = "./images/crow_3.jpg" 
+                crowWinning.src = "./images/crow_3.png"
                 crowWinning.alt = 'Crow standing victoriously';
                 crowWinning.style.height = "150px";
                 crowWinning.style.width = "auto";
@@ -176,9 +177,9 @@ function playGame() {
                 endGameWinner.textContent = "Crom Cruach has triumphed! Boo you!";
                 
                 const crow = document.createElement('img');
-                crow.src = "./images/crow_2.jpg" 
+                crow.src = "./images/crow_2.png" 
                 crow.alt = 'Crow on a skull';
-                crow.style.height = "150px";
+                crow.style.height = "180px";
                 crow.style.width = "auto";
                 endGameWinner.appendChild(crow);
         
@@ -190,7 +191,7 @@ function playGame() {
                 console.log("It's a tie!")
 
                 const crowFlying = document.createElement('img');
-                crowFlying.src = "./images/crow_1.jpg" 
+                crowFlying.src = "./images/crow_1.png"
                 crowFlying.alt = 'Crow flying away';
                 crowFlying.style.height = "150px";
                 crowFlying.style.width = "auto";
@@ -212,10 +213,10 @@ startBtn.addEventListener("click", () => {
     
     startBtn.replaceWith(message);
 
-        // Clear the message after a delay
+        /* Clear the message after a delay
         setTimeout(() => {
             message.textContent = ""; // Clears the message after 3 seconds
-        }, 2500);
+        }, 2500);*/
     
         startBtn.remove(); // Removes the start button
         playGame();
