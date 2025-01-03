@@ -291,3 +291,8 @@ a{
     font-size: 18px;
     text-decoration: underline;
 }
+
+footer a:hover {
+    text-decoration: underline;
+    color: #A97C42; /* Slightly warmer golden hue on hover */
+}
