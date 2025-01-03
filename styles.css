@@ -277,3 +277,17 @@ img{
     opacity: 0.6;
     pointer-events: none; /* Prevent interference with clicks */
 }
+
+footer{
+    background: linear-gradient(135deg, #2E2E2E, #4B4B4B, #1C1C1C);
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+a{
+    color: #D3D3D3;
+    font-size: 18px;
+    text-decoration: underline;
+}
