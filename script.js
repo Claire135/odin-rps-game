@@ -208,15 +208,10 @@ startBtn.addEventListener("click", () => {
     
     const message = document.createElement("div");
     message.classList.add("message");
-    message.textContent = "Choose your weapon";
+    message.textContent = "Choose your weapon!";
     startBtn.appendChild(message);
     
     startBtn.replaceWith(message);
-
-        /* Clear the message after a delay
-        setTimeout(() => {
-            message.textContent = ""; // Clears the message after 3 seconds
-        }, 2500);*/
     
         startBtn.remove(); // Removes the start button
         playGame();

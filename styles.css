@@ -32,7 +32,8 @@ h1 {
     flex-direction: column;
     font-family: 'Celtic Hand', serif;
     letter-spacing: 0.1em;
-    padding: 40px;
+    padding-top: 40px;
+    line-height: 1.2;
 }
 
 p{
@@ -53,7 +54,6 @@ p{
 .button-box{
     display: flex;
     gap: 40px;
-    background-color: #F5F5DC;
     padding: 20px;
     justify-content: space-around;
 }
@@ -61,7 +61,7 @@ p{
 #rockBtn {
     background: linear-gradient(145deg, #2F4F4F, #A9A9A9); /* Stone and iron gradient */
     color: #FFFFFF; 
-    border: 2px solid #2F4F4F; 
+    border: 3px solid #2F4F4F; 
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 18px;
